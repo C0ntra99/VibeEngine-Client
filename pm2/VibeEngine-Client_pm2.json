@@ -1,0 +1,11 @@
+{
+    "apps":[
+        {
+            "name":"VibeEngine Client",
+            "script":"Submodules/client/main.js",
+            "watch":["**/client/**/*.js","**/*.json"],
+            "cwd":"/home/efowler/Projects/VibeLabs/VibeEngine",
+            "autorestart":false
+        }
+    ]
+}
