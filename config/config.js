@@ -1,3 +1,4 @@
+//Holds config for the api
 const config={
     "endpoints":[ 
         {
