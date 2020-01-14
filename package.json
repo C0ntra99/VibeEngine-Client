@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "vibeengin-client",
   "version": "1.0.0",
   "description": "Client for the VibeEngine",
   "main": "main.js",
@@ -7,11 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ethan Fowler",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
+    "axios": "^0.19.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/C0ntra99/VibeEngine-Client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/C0ntra99/VibeEngine-Client/issues"
+  },
+  "homepage": "https://github.com/C0ntra99/VibeEngine-Client#readme"
 }
