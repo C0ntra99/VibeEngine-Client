@@ -31,24 +31,36 @@ app.listen(port, () => {
 });
 
 
-//Attempt to register with the VibeEngine Server
-let client_uid;
-let test_connection = async () => {
+//test the connection to the server
+//this should always be running, if it fails then something went wrong with everything and broke some shit
+let test_connection = async (callback) => {
     setTimeout(async () => {
         axios.get(`http://${VE_config.client.server.ip}:${VE_config.client.server.port}/api/connection`)
         .then((resp) => {
             //break?
-            console.log(resp.data)
+            if(resp.data.status == 200) {
+                callback(resp.data)
+            }
         })
         .catch((err)  => {
             //error doesnt happen
             logger.error({label:`test_connection`, message:`${err}`})
-            test_connection()
+            test_connection((callback))
         })
-
         
     }, 3000)
-
 }
 
-test_connection()
+
+let main = async () => {
+    //This is such a weird way to do it but I guess it works :///
+    let connection_status = await test_connection()
+    console.log(connection_status)
+
+    test_connection((data) => {
+        //UIDD is going to be somewhere in the data, just gotta find it
+        //console.log(data)
+    })
+}
+
+main()
